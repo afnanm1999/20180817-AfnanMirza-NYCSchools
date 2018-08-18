@@ -2,9 +2,17 @@
 
 <img src="https://raw.githubusercontent.com/afnanm1999/20180817-AfnanMirza-NYCSchools/master/20180817-AfnanMirza-NYCSchools/Supporting%20Files/logo.png" width="250">
 
+### Stuff i wanted to add but didn't because i didn't have enough time:
+
+- Add UISearchBar & UISearchController to make it easier for the User to search for a certain school.
+- Add a custom View which will show when the data is being fetched to keep the user informed.
+- Add Unit Testing
+- Make the Design look nicer.
+- Move some functions into different files in order to make a file less crowded.
+
 ### Instructions
 
-** Coding Challenge: NYC Schools **
+**Coding Challenge: NYC Schools**
 
 **GOAL** : Verify candidate can provide a technical solution and follow instructions
 
