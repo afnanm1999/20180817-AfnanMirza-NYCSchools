@@ -12,7 +12,7 @@ import MapKit
 
 class Utils {
     
-    /// This function get the normal address without coodinates
+    /// This function will fetch the address without coodinates
     ///
     /// - Returns: Stirng, address of the high school
     static func getCompleteAddressWithoutCoordinate(_ schoolAddr: String?) -> String{
@@ -23,9 +23,9 @@ class Utils {
         return ""
     }
     
-    /// This function fetch the coodinate for the selected high school location
+    /// This function will fetch the coodinates for the selected High School location
     ///
-    /// - Returns: CLLocationCoordinate2D, coodinate of high school location
+    /// - Returns: CLLocationCoordinate2D, coodinate of High School location
     static func getCoodinateForSelectedHighSchool(_ schoolAddr: String?) -> CLLocationCoordinate2D?{
         if let schoolAddress = schoolAddr{
             let coordinateString = schoolAddress.slice(from: "(", to: ")")
@@ -40,7 +40,7 @@ class Utils {
     }
     
     
-    /// This functions is used to fetch json payload and assign parameter to the NYCHighSchools model
+    /// This functions is used to fetch JSON payload and assign parameter to the NYCHighSchools model
     ///
     /// - Parameter json: Dictionany with Schools Detail
     /// - Returns: High School Model type
@@ -74,7 +74,7 @@ class Utils {
         return nil
     }
     
-    /// Pass the json and configure to the model type
+    /// Pass the JSON and configure to the model type
     ///
     /// - Parameter highSchoolsData: Data of Array composed with Dictionary
     /// - Returns: Array of Model class

@@ -25,15 +25,21 @@ class NYCHSViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.fetchNYCHighSchoolInformation()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.fetchNYCHighSchoolInformation()
+        }
     }
     
     @IBAction func reloadAction(_ sender: Any) {
         print("Reloading...")
         
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.fetchNYCHighSchoolInformation()
+        }
+        
     }
     
-    //MARK: - Fetch API and parse json payloads
+    //MARK: - Fetch API and parse JSON payloads
     private func fetchNYCHighSchoolInformation(){
         guard let highSchoolsURL = URL(string: Constants.highSchoolsURL) else {
             return
@@ -57,7 +63,7 @@ class NYCHSViewController: UIViewController {
     }
     
     
-    /// This function is call the API to get all the high school with sat score, and add to the exist model array according to the common parameter dbn.
+    /// This function is will call the API to get all of the High School with SAT Score, and add to the exist model array according to the common parameter DBN.
     private func fetchHighSchoolSATSore(){
         guard let highSchoolsSATScoreURL = URL(string: Constants.schoolWithSATScoreURL) else {
             return
@@ -80,16 +86,17 @@ class NYCHSViewController: UIViewController {
         task.resume()
     }
     
-    /// This function is used to add the sat score to the each high school
+    /// This function is used to add the sat score to the high school
     ///
-    /// - Parameter satScoreObject: data of array composed with Dictionary
+    /// - Parameter satScoreObject: Data of Array composed with Dictionary
     private func addSatScoreToHighSchool(_ satScoreObject: Any){
         guard let highSchoolsWithSatScoreArr = satScoreObject as? [[String: Any]] else{
             return
         }
+        
         for  highSchoolsWithSatScore in highSchoolsWithSatScoreArr{
             if let matchedDBN = highSchoolsWithSatScore["dbn"] as? String{
-                //get the high schhool with the common dbn
+                //This will get the High School with the Common DBN
                 let matchedHighSchools = self.nycHSList?.first(where: { (nycHighSchool) -> Bool in
                     return nycHighSchool.dbn == matchedDBN
                 })
@@ -101,18 +108,20 @@ class NYCHSViewController: UIViewController {
                 if let satReadingScoreObject =  highSchoolsWithSatScore["sat_critical_reading_avg_score"] as? String{
                     matchedHighSchools!.satCriticalReadingAvgScore = satReadingScoreObject
                 }
+                
                 if let satMathScoreObject = highSchoolsWithSatScore["sat_math_avg_score"] as? String{
                     matchedHighSchools!.satMathAvgScore = satMathScoreObject
                 }
+                
                 if let satWritingScoreObject =  highSchoolsWithSatScore["sat_writing_avg_score"] as? String{
                     matchedHighSchools!.satWritinAvgScore = satWritingScoreObject
                 }
+                
             }
         }
     }
     
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Pass the selected school with sat score to the destinatiion view controller
         if segue.identifier == Constants.HSWithSATScoreSegue{
@@ -142,9 +151,11 @@ extension NYCHSViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: Constants.hsCellIdentifier, for: indexPath)
+
         
         if let nycHighSchoolsArr = self.nycHSList{
             cell.textLabel?.text = nycHighSchoolsArr[indexPath.row].schoolName
+            
             if let phoneNum = nycHighSchoolsArr[indexPath.row].schoolTelephoneNumber{
                 cell.detailTextLabel?.text = "Phone # \(phoneNum)"
             }

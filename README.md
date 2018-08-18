@@ -2,12 +2,6 @@
 
 <img src="https://raw.githubusercontent.com/afnanm1999/20180817-AfnanMirza-NYCSchools/master/20180817-AfnanMirza-NYCSchools/Supporting%20Files/logo.png" width="250">
 
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
 ### Instructions
 
 ** Coding Challenge: NYC Schools **
@@ -65,4 +59,4 @@ As mentioned, you are not expected to function in a vacuum. Use all the online r
 ### How to Use the app
 
 In order to test the app, project files need to be opened in Xcode 9.2<br/>
-There is no need to configure anything inside of the application source code. The project is already configured and can be run directly on a simulator of your choice. when the app first launches it should fetch the School's Data from the City of New York websites API. Once the data has been fetched successfully it will then list all of the schools in a UITableViewCell. Users can then go ahead and click on a school of their choice. This action will present a new View Controller with the Selected Schools SAT Scores and other information.
+There is no need to configure anything inside of the application source code. The project is already configured and can be run directly on a simulator of your choice. when the app first launches it will fetch the School's Data from the City of New York websites API. Once the data has been fetched successfully it will then list all of the schools in a UITableViewCell. Users can then go ahead and click on a school of their choice. This action will present a new View Controller with the Selected Schools SAT Scores and other information.

@@ -25,8 +25,11 @@
 		CF9332A62127E65C00BC0B12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9332A52127E65C00BC0B12 /* Images.xcassets */; };
 		CFA07E502127D631005670E3 /* HSContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA07E4F2127D631005670E3 /* HSContactTableViewCell.swift */; };
 		CFA07E532127D7DD005670E3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA07E522127D7DD005670E3 /* Extensions.swift */; };
-		CFA07E552127D994005670E3 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA07E542127D994005670E3 /* Cells.swift */; };
+		CFA07E552127D994005670E3 /* DetailCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA07E542127D994005670E3 /* DetailCells.swift */; };
 		CFA07E582127DC64005670E3 /* CellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA07E572127DC64005670E3 /* CellAnimator.swift */; };
+		CFC9D403212872A4007174B3 /* Chivo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF35BC05212870210005875D /* Chivo-Regular.ttf */; };
+		CFC9D40621287348007174B3 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CFC9D40421287345007174B3 /* Montserrat-Regular.otf */; };
+		CFC9D40721287348007174B3 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CFC9D40521287347007174B3 /* Montserrat-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +71,14 @@
 		CF20F8302127E93300AFD1AC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		CF20F8322127EA2A00AFD1AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CF2F167E2127D3D80007CEA8 /* HSSatScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSSatScoresTableViewCell.swift; sourceTree = "<group>"; };
+		CF35BC05212870210005875D /* Chivo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chivo-Regular.ttf"; sourceTree = "<group>"; };
 		CF9332A52127E65C00BC0B12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CFA07E4F2127D631005670E3 /* HSContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSContactTableViewCell.swift; sourceTree = "<group>"; };
 		CFA07E522127D7DD005670E3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		CFA07E542127D994005670E3 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		CFA07E542127D994005670E3 /* DetailCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCells.swift; sourceTree = "<group>"; };
 		CFA07E572127DC64005670E3 /* CellAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAnimator.swift; sourceTree = "<group>"; };
+		CFC9D40421287345007174B3 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		CFC9D40521287347007174B3 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 		CF0838D02127B95D00CC0725 /* 20180817-AfnanMirza-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				CF35BC0421286FFD0005875D /* Fonts */,
 				CFA07E562127DC50005670E3 /* Frameworks */,
 				CFA07E512127D7CB005670E3 /* Extensions */,
 				CF0839022127B9A900CC0725 /* Models */,
@@ -170,7 +177,7 @@
 				CF0838DD2127B95E00CC0725 /* Info.plist */,
 				CF0839072127BF4600CC0725 /* Constants.swift */,
 				CF0839092127C18900CC0725 /* Utils.swift */,
-				CFA07E542127D994005670E3 /* Cells.swift */,
+				CFA07E542127D994005670E3 /* DetailCells.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -202,6 +209,16 @@
 				CFA07E4F2127D631005670E3 /* HSContactTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CF35BC0421286FFD0005875D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CFC9D40521287347007174B3 /* Montserrat-Bold.otf */,
+				CFC9D40421287345007174B3 /* Montserrat-Regular.otf */,
+				CF35BC05212870210005875D /* Chivo-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		CFA07E512127D7CB005670E3 /* Extensions */ = {
@@ -327,11 +344,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC9D403212872A4007174B3 /* Chivo-Regular.ttf in Resources */,
 				CF20F8312127E93300AFD1AC /* logo.png in Resources */,
 				CF9332A62127E65C00BC0B12 /* Images.xcassets in Resources */,
 				CF20F8332127EA2A00AFD1AC /* README.md in Resources */,
 				CF0838DC2127B95E00CC0725 /* LaunchScreen.storyboard in Resources */,
+				CFC9D40621287348007174B3 /* Montserrat-Regular.otf in Resources */,
 				CF0838D72127B95E00CC0725 /* Main.storyboard in Resources */,
+				CFC9D40721287348007174B3 /* Montserrat-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF08390A2127C18900CC0725 /* Utils.swift in Sources */,
-				CFA07E552127D994005670E3 /* Cells.swift in Sources */,
+				CFA07E552127D994005670E3 /* DetailCells.swift in Sources */,
 				CF08390F2127CA2700CC0725 /* HSOverviewTableViewCell.swift in Sources */,
 				CF0839062127BE5100CC0725 /* NYCHighSchools.swift in Sources */,
 				CF0839112127CDD500CC0725 /* HSAddressTableViewCell.swift in Sources */,

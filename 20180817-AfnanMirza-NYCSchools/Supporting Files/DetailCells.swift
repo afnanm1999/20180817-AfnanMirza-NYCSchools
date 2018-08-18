@@ -1,5 +1,5 @@
 //
-//  Cells.swift
+//  DetailCells.swift
 //  20180817-AfnanMirza-NYCSchools
 //
 //  Created by Afnan Mirza on 8/18/18.
@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class Cells {
+class DetailCells {
     /// This function get the selected High School name's  average sat scores
     ///
     /// - Returns: UITableViewCell
-    static func getTableViewCellForSATScore(_ tableView: UITableView, HSWithSatScore: NYCHighSchools) -> UITableViewCell{
+    static func tableViewCellWithSATScore(_ tableView: UITableView, HSWithSatScore: NYCHighSchools) -> UITableViewCell{
         let schoolWithSATScoresCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithSATScoreCellIdentifier) as! HSSatScoresTableViewCell
         
         schoolWithSATScoresCell.hsNameLbl.text = HSWithSatScore.schoolName
@@ -35,7 +35,7 @@ class Cells {
     /// This function get the selected high school's overview
     ///
     /// - Returns: UITableViewCell
-    static func getTableViewCellForOverView(_ tableView: UITableView, HSWithSatScore: NYCHighSchools) -> UITableViewCell{
+    static func tableViewCellWithOverView(_ tableView: UITableView, HSWithSatScore: NYCHighSchools) -> UITableViewCell{
         let schoolWithOverviewCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolOverviewCellIdentifier) as! HSOverviewTableViewCell
         
         schoolWithOverviewCell.hsOverviewLbl.text = HSWithSatScore.overviewParagraph
@@ -46,7 +46,7 @@ class Cells {
     /// This function get the high school contact information with address, tel and website.
     ///
     /// - Returns: UITableViewCell
-    static func getTableViewCellForContact(_ tableView: UITableView, HSWithSatScore: NYCHighSchools) -> UITableViewCell{
+    static func tableViewCellWithContactInfo(_ tableView: UITableView, HSWithSatScore: NYCHighSchools) -> UITableViewCell{
         let schoolWithContactCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithContactCellIdentifier) as! HSContactTableViewCell
         
         schoolWithContactCell.hsAddressLbl.text = "Address: " + Utils.getCompleteAddressWithoutCoordinate(HSWithSatScore.schoolAddress)
@@ -59,7 +59,7 @@ class Cells {
     /// This function get the High School's location with annotaion on the map
     ///
     /// - Returns: UITableViewCell
-    static func getTableViewCellForAddress(_ tableView: UITableView, HSWithSatScore: NYCHighSchools) -> UITableViewCell{
+    static func tableViewCellWithAddress(_ tableView: UITableView, HSWithSatScore: NYCHighSchools) -> UITableViewCell{
         let schoolWithAddressCell = tableView.dequeueReusableCell(withIdentifier: DetailConstants.Cells.schoolWithAddressCellIdentifier) as! HSAddressTableViewCell
         
         if let highSchoolCoordinate = Utils.getCoodinateForSelectedHighSchool(HSWithSatScore.schoolAddress){
