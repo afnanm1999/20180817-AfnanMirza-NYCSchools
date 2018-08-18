@@ -97,12 +97,10 @@
 		CF0838D02127B95D00CC0725 /* 20180817-AfnanMirza-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
-				CF0838D12127B95E00CC0725 /* AppDelegate.swift */,
-				CF0838D32127B95E00CC0725 /* ViewController.swift */,
-				CF0838D52127B95E00CC0725 /* Main.storyboard */,
-				CF0838D82127B95E00CC0725 /* Assets.xcassets */,
-				CF0838DA2127B95E00CC0725 /* LaunchScreen.storyboard */,
-				CF0838DD2127B95E00CC0725 /* Info.plist */,
+				CF0839022127B9A900CC0725 /* Models */,
+				CF0839012127B99C00CC0725 /* View Controllers */,
+				CF0839002127B98E00CC0725 /* Supporting Files */,
+				CF0838FF2127B98400CC0725 /* Storyboards */,
 			);
 			path = "20180817-AfnanMirza-NYCSchools";
 			sourceTree = "<group>";
@@ -123,6 +121,40 @@
 				CF0838F32127B95E00CC0725 /* Info.plist */,
 			);
 			path = "20180817-AfnanMirza-NYCSchoolsUITests";
+			sourceTree = "<group>";
+		};
+		CF0838FF2127B98400CC0725 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CF0838D52127B95E00CC0725 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CF0839002127B98E00CC0725 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF0838D12127B95E00CC0725 /* AppDelegate.swift */,
+				CF0838D82127B95E00CC0725 /* Assets.xcassets */,
+				CF0838DA2127B95E00CC0725 /* LaunchScreen.storyboard */,
+				CF0838DD2127B95E00CC0725 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF0839012127B99C00CC0725 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF0838D32127B95E00CC0725 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CF0839022127B9A900CC0725 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "20180817-AfnanMirza-NYCSchools/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/20180817-AfnanMirza-NYCSchools/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.afnanmirza.-0180817-AfnanMirza-NYCSchools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,7 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "20180817-AfnanMirza-NYCSchools/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/20180817-AfnanMirza-NYCSchools/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.afnanmirza.-0180817-AfnanMirza-NYCSchools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
