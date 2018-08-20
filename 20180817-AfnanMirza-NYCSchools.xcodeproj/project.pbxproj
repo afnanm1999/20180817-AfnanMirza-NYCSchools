@@ -21,6 +21,7 @@
 		CF0839112127CDD500CC0725 /* HSAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0839102127CDD500CC0725 /* HSAddressTableViewCell.swift */; };
 		CF20F8312127E93300AFD1AC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CF20F8302127E93300AFD1AC /* logo.png */; };
 		CF20F8332127EA2A00AFD1AC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CF20F8322127EA2A00AFD1AC /* README.md */; };
+		CF2370B4212B26C6007874B6 /* NYCHSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2370B3212B26C6007874B6 /* NYCHSTableViewCell.swift */; };
 		CF2F167F2127D3D80007CEA8 /* HSSatScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F167E2127D3D80007CEA8 /* HSSatScoresTableViewCell.swift */; };
 		CF9332A62127E65C00BC0B12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9332A52127E65C00BC0B12 /* Images.xcassets */; };
 		CFA07E502127D631005670E3 /* HSContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA07E4F2127D631005670E3 /* HSContactTableViewCell.swift */; };
@@ -70,6 +71,7 @@
 		CF0839102127CDD500CC0725 /* HSAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAddressTableViewCell.swift; sourceTree = "<group>"; };
 		CF20F8302127E93300AFD1AC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		CF20F8322127EA2A00AFD1AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CF2370B3212B26C6007874B6 /* NYCHSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCHSTableViewCell.swift; sourceTree = "<group>"; };
 		CF2F167E2127D3D80007CEA8 /* HSSatScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSSatScoresTableViewCell.swift; sourceTree = "<group>"; };
 		CF35BC05212870210005875D /* Chivo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chivo-Regular.ttf"; sourceTree = "<group>"; };
 		CF9332A52127E65C00BC0B12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -203,12 +205,21 @@
 		CF08390D2127CA1500CC0725 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CF2370B5212B270B007874B6 /* Detail Cells */,
+				CF2370B3212B26C6007874B6 /* NYCHSTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CF2370B5212B270B007874B6 /* Detail Cells */ = {
+			isa = PBXGroup;
+			children = (
 				CF08390E2127CA2700CC0725 /* HSOverviewTableViewCell.swift */,
 				CF0839102127CDD500CC0725 /* HSAddressTableViewCell.swift */,
 				CF2F167E2127D3D80007CEA8 /* HSSatScoresTableViewCell.swift */,
 				CFA07E4F2127D631005670E3 /* HSContactTableViewCell.swift */,
 			);
-			path = Cells;
+			path = "Detail Cells";
 			sourceTree = "<group>";
 		};
 		CF35BC0421286FFD0005875D /* Fonts */ = {
@@ -383,6 +394,7 @@
 				CF0839112127CDD500CC0725 /* HSAddressTableViewCell.swift in Sources */,
 				CF0839042127BC8C00CC0725 /* NYCHSViewController.swift in Sources */,
 				CFA07E582127DC64005670E3 /* CellAnimator.swift in Sources */,
+				CF2370B4212B26C6007874B6 /* NYCHSTableViewCell.swift in Sources */,
 				CF0838D22127B95E00CC0725 /* AppDelegate.swift in Sources */,
 				CF2F167F2127D3D80007CEA8 /* HSSatScoresTableViewCell.swift in Sources */,
 				CF08390C2127C96D00CC0725 /* NYCHSDetailTableViewController.swift in Sources */,

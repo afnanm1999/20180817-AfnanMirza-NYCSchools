@@ -4,11 +4,10 @@
 
 ### Stuff i wanted to add but didn't because i didn't have enough time:
 
-- Add UISearchBar & UISearchController to make it easier for the User to search for a certain school.
 - Add a custom View which will show when the data is being fetched to keep the user informed.
 - Add Unit Testing
-- Make the Design look nicer.
 - Move some functions into different files in order to make a file less crowded.
+
 
 ### Instructions
 
@@ -68,3 +67,17 @@ As mentioned, you are not expected to function in a vacuum. Use all the online r
 
 In order to test the app, project files need to be opened in Xcode 9.2<br/>
 There is no need to configure anything inside of the application source code. The project is already configured and can be run directly on a simulator of your choice. when the app first launches it will fetch the School's Data from the City of New York websites API. Once the data has been fetched successfully it will then list all of the schools in a UITableViewCell. Users can then go ahead and click on a school of their choice. This action will present a new View Controller with the Selected Schools SAT Scores and other information.
+
+ **Features added by me**
+ 
+ - Created a Custom Launch Screen Logo for the application.
+ - Card View with Shadows
+ - Custom Animation for UITableViewCells
+ - Added UISearchBar & UISearchController to make it easier for the user to test the application
+ - Users can call the school by simply pressing the schools phone number on the Initial Screen (User will have to run the application on a Real Device in order for this to function properly. ).
+ - In the Details View Added These Details:
+    - Schools SAT Scores
+    - Schools Overview
+    - Schools Contact Information
+    - MapView with Schools location pinpointed
+    

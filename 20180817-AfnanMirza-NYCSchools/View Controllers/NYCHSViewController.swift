@@ -15,11 +15,16 @@ class NYCHSViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     // Variables
+    let searchController = UISearchController(searchResultsController: nil)
+    
     var nycHSList: [NYCHighSchools]?
-
+    
+    var filteredNycHSList = [NYCHighSchools]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupSearchController()
         
     }
     
@@ -28,6 +33,35 @@ class NYCHSViewController: UIViewController {
         DispatchQueue.global(qos: .userInitiated).async {
             self.fetchNYCHighSchoolInformation()
         }
+    }
+    
+    // MARK: - Private instance methods
+    
+    func setupSearchController(){
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Schools"
+        searchController.searchBar.tintColor = UIColor.white
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredNycHSList = (nycHSList?.filter({( schools : NYCHighSchools) -> Bool in
+            return schools.schoolName!.lowercased().contains(searchText.lowercased())
+        }))!
+        
+        tableView.reloadData()
     }
     
     @IBAction func reloadAction(_ sender: Any) {
@@ -57,7 +91,6 @@ class NYCHSViewController: UIViewController {
                     print("NYC HS JSON error: \(error.localizedDescription)")
                 }
             }
-            
         }
         task.resume()
     }
@@ -121,6 +154,34 @@ class NYCHSViewController: UIViewController {
         }
     }
     
+    // MARK: Selector Functions
+    
+    @objc func callNumber(_ sender: UIButton){
+    
+        
+        var nycHighSchoolList: NYCHighSchools
+        
+        if isFiltering() {
+            nycHighSchoolList = filteredNycHSList[sender.tag]
+        } else {
+            nycHighSchoolList = self.nycHSList![sender.tag]
+        }
+        
+        let schoolPhoneNumber = nycHighSchoolList.schoolTelephoneNumber
+        
+        if let url = URL(string: "tel://\(String(describing: schoolPhoneNumber))"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }else{
+            let alertView = UIAlertController(title: "Error!", message: "Please run on a real device to call \(schoolPhoneNumber!)", preferredStyle: .alert)
+            
+            let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            
+            alertView.addAction(okayAction)
+            
+            self.present(alertView, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Pass the selected school with sat score to the destinatiion view controller
@@ -135,41 +196,82 @@ class NYCHSViewController: UIViewController {
     
 }
 
+extension NYCHSViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
+
 
 // MARK: UITableViewDataSource and UITableViewDelegate Extensions
 extension NYCHSViewController: UITableViewDataSource, UITableViewDelegate {
     
     //MARK: - UITableViewDataSource
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        CellAnimator.animate(cell, withDuration: 0.6, animation: CellAnimator.AnimationType(rawValue: 5)!)
+        if !isFiltering() {
+            CellAnimator.animate(cell, withDuration: 0.6, animation: CellAnimator.AnimationType(rawValue: 5)!)
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            return self.filteredNycHSList.count
+        }
+        
         return self.nycHSList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: Constants.hsCellIdentifier, for: indexPath)
-
+        let cell: NYCHSTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: Constants.hsCellIdentifier, for: indexPath) as! NYCHSTableViewCell
         
-        if let nycHighSchoolsArr = self.nycHSList{
-            cell.textLabel?.text = nycHighSchoolsArr[indexPath.row].schoolName
-            
-            if let phoneNum = nycHighSchoolsArr[indexPath.row].schoolTelephoneNumber{
-                cell.detailTextLabel?.text = "Phone # \(phoneNum)"
-            }
-            
+        tableView.rowHeight = 195
+        
+        var nycHighSchoolList: NYCHighSchools
+        
+        if isFiltering() {
+            nycHighSchoolList = filteredNycHSList[indexPath.row]
+        } else {
+            nycHighSchoolList = self.nycHSList![indexPath.row]
         }
+        
+        
+        if let schoolName = nycHighSchoolList.schoolName {
+            cell.schoolNameLbl.text = schoolName
+        }
+        
+        if let schoolAddr = nycHighSchoolList.schoolAddress {
+            let address = Utils.getCompleteAddressWithoutCoordinate(schoolAddr)
+            cell.schoolAddrLbl.text = "Address: \(address)"
+        }
+        
+        if let phoneNum = nycHighSchoolList.schoolTelephoneNumber{
+            cell.schoolPhoneNumLbl.setTitle("Phone # \(phoneNum)", for: .normal)
+            
+            cell.schoolPhoneNumLbl.tag = indexPath.row
+            cell.schoolPhoneNumLbl.addTarget(self, action: #selector(self.callNumber(_:)), for: .touchUpInside)
+        }
+        
+        
+        
         
         return cell
     }
     
     //MARK: - UITable View Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let nycHighSchoolsArray = self.nycHSList{
-            let selectedHighSchool = nycHighSchoolsArray[indexPath.row]
-            self.performSegue(withIdentifier: Constants.HSWithSATScoreSegue, sender: selectedHighSchool)
+        
+        var nycHighSchoolList: NYCHighSchools
+        
+        if isFiltering() {
+            nycHighSchoolList = filteredNycHSList[indexPath.row]
+        } else {
+            nycHighSchoolList = self.nycHSList![indexPath.row]
         }
+        
+        let selectedHighSchool = nycHighSchoolList
+        self.performSegue(withIdentifier: Constants.HSWithSATScoreSegue, sender: selectedHighSchool)
+        
     }
 }
