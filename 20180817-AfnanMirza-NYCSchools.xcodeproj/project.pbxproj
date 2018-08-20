@@ -23,6 +23,10 @@
 		CF20F8332127EA2A00AFD1AC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CF20F8322127EA2A00AFD1AC /* README.md */; };
 		CF2370B4212B26C6007874B6 /* NYCHSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2370B3212B26C6007874B6 /* NYCHSTableViewCell.swift */; };
 		CF2F167F2127D3D80007CEA8 /* HSSatScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F167E2127D3D80007CEA8 /* HSSatScoresTableViewCell.swift */; };
+		CF69BE9A212B480500B4D7F2 /* img4.png in Resources */ = {isa = PBXBuildFile; fileRef = CF69BE96212B480400B4D7F2 /* img4.png */; };
+		CF69BE9B212B480500B4D7F2 /* img3.png in Resources */ = {isa = PBXBuildFile; fileRef = CF69BE97212B480400B4D7F2 /* img3.png */; };
+		CF69BE9C212B480500B4D7F2 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = CF69BE98212B480400B4D7F2 /* img1.png */; };
+		CF69BE9D212B480500B4D7F2 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = CF69BE99212B480500B4D7F2 /* img2.png */; };
 		CF9332A62127E65C00BC0B12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9332A52127E65C00BC0B12 /* Images.xcassets */; };
 		CFA07E502127D631005670E3 /* HSContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA07E4F2127D631005670E3 /* HSContactTableViewCell.swift */; };
 		CFA07E532127D7DD005670E3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA07E522127D7DD005670E3 /* Extensions.swift */; };
@@ -74,6 +78,10 @@
 		CF2370B3212B26C6007874B6 /* NYCHSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCHSTableViewCell.swift; sourceTree = "<group>"; };
 		CF2F167E2127D3D80007CEA8 /* HSSatScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSSatScoresTableViewCell.swift; sourceTree = "<group>"; };
 		CF35BC05212870210005875D /* Chivo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chivo-Regular.ttf"; sourceTree = "<group>"; };
+		CF69BE96212B480400B4D7F2 /* img4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img4.png; sourceTree = "<group>"; };
+		CF69BE97212B480400B4D7F2 /* img3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img3.png; sourceTree = "<group>"; };
+		CF69BE98212B480400B4D7F2 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
+		CF69BE99212B480500B4D7F2 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
 		CF9332A52127E65C00BC0B12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CFA07E4F2127D631005670E3 /* HSContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSContactTableViewCell.swift; sourceTree = "<group>"; };
 		CFA07E522127D7DD005670E3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 		CF0838C52127B95D00CC0725 = {
 			isa = PBXGroup;
 			children = (
+				CF69BE95212B47F600B4D7F2 /* Screenshots */,
 				CF20F8322127EA2A00AFD1AC /* README.md */,
 				CF0838D02127B95D00CC0725 /* 20180817-AfnanMirza-NYCSchools */,
 				CF0838E52127B95E00CC0725 /* 20180817-AfnanMirza-NYCSchoolsTests */,
@@ -230,6 +239,17 @@
 				CF35BC05212870210005875D /* Chivo-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CF69BE95212B47F600B4D7F2 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				CF69BE98212B480400B4D7F2 /* img1.png */,
+				CF69BE99212B480500B4D7F2 /* img2.png */,
+				CF69BE97212B480400B4D7F2 /* img3.png */,
+				CF69BE96212B480400B4D7F2 /* img4.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		CFA07E512127D7CB005670E3 /* Extensions */ = {
@@ -356,7 +376,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC9D403212872A4007174B3 /* Chivo-Regular.ttf in Resources */,
+				CF69BE9B212B480500B4D7F2 /* img3.png in Resources */,
+				CF69BE9D212B480500B4D7F2 /* img2.png in Resources */,
+				CF69BE9C212B480500B4D7F2 /* img1.png in Resources */,
 				CF20F8312127E93300AFD1AC /* logo.png in Resources */,
+				CF69BE9A212B480500B4D7F2 /* img4.png in Resources */,
 				CF9332A62127E65C00BC0B12 /* Images.xcassets in Resources */,
 				CF20F8332127EA2A00AFD1AC /* README.md in Resources */,
 				CF0838DC2127B95E00CC0725 /* LaunchScreen.storyboard in Resources */,

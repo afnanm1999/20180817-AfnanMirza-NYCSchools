@@ -19,10 +19,5 @@ class NYCHighSchools: NSObject {
     var satCriticalReadingAvgScore: String?
     var satMathAvgScore: String?
     var satWritinAvgScore: String?
-    
-    
-    
 
-    
-    
 }
