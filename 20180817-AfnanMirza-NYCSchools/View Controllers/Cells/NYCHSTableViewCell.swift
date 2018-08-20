@@ -18,7 +18,8 @@ class NYCHSTableViewCell: UITableViewCell {
     
     @IBOutlet var schoolNameLbl: UILabel!
     @IBOutlet var schoolAddrLbl: UILabel!
-    @IBOutlet var schoolPhoneNumLbl: UIButton!
+    @IBOutlet var schoolPhoneNumBtn: UIButton!
+    @IBOutlet var navigateToAddrBtn: UIButton!
     
     
     override func awakeFromNib() {
@@ -27,8 +28,8 @@ class NYCHSTableViewCell: UITableViewCell {
         chooseRandomColorForCard()
         setupCardViewShadows()
         
-        self.schoolPhoneNumLbl.layer.cornerRadius = 15
-        
+        self.schoolPhoneNumBtn.layer.cornerRadius = 15
+        self.navigateToAddrBtn.layer.cornerRadius = 15
     }
     
     // MARK: Card View Customization Functions

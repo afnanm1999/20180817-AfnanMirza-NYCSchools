@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class NYCHSViewController: UIViewController {
     // UI Components
@@ -182,6 +183,28 @@ class NYCHSViewController: UIViewController {
         }
     }
     
+    @objc func navigateToAddress(_ sender: UIButton){
+        
+        var nycHighSchoolList: NYCHighSchools
+        
+        if isFiltering() {
+            nycHighSchoolList = filteredNycHSList[sender.tag]
+        } else {
+            nycHighSchoolList = self.nycHSList![sender.tag]
+        }
+        
+        let schoolAddress = nycHighSchoolList.schoolAddress
+        
+        if let highSchoolCoordinate = Utils.getCoodinateForSelectedHighSchool(schoolAddress){
+            let coordinate = CLLocationCoordinate2DMake(highSchoolCoordinate.latitude, highSchoolCoordinate.longitude)
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+            mapItem.name = "\(nycHighSchoolList.schoolName!)"
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        }
+        
+ 
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Pass the selected school with sat score to the destinatiion view controller
@@ -244,13 +267,16 @@ extension NYCHSViewController: UITableViewDataSource, UITableViewDelegate {
         if let schoolAddr = nycHighSchoolList.schoolAddress {
             let address = Utils.getCompleteAddressWithoutCoordinate(schoolAddr)
             cell.schoolAddrLbl.text = "Address: \(address)"
+            
+            cell.navigateToAddrBtn.tag = indexPath.row
+            cell.navigateToAddrBtn.addTarget(self, action: #selector(self.navigateToAddress(_:)), for: .touchUpInside)
         }
         
         if let phoneNum = nycHighSchoolList.schoolTelephoneNumber{
-            cell.schoolPhoneNumLbl.setTitle("Phone # \(phoneNum)", for: .normal)
+            cell.schoolPhoneNumBtn.setTitle("Phone # \(phoneNum)", for: .normal)
             
-            cell.schoolPhoneNumLbl.tag = indexPath.row
-            cell.schoolPhoneNumLbl.addTarget(self, action: #selector(self.callNumber(_:)), for: .touchUpInside)
+            cell.schoolPhoneNumBtn.tag = indexPath.row
+            cell.schoolPhoneNumBtn.addTarget(self, action: #selector(self.callNumber(_:)), for: .touchUpInside)
         }
         
         

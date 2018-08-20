@@ -21,11 +21,18 @@
 - Custom Animation for UITableViewCells
 - Added UISearchBar & UISearchController to make it easier for the user to find a certain school inside of the application.
 - Users can call the school by simply pressing the schools phone number on the Initial Screen (User will have to run the application on a Real Device in order for this to function properly. ).
+- Users can navigate to the school simply by pressing the Navigate to Address button on the Initial Screen.
 - In the Details View Added These Details:
     - Schools SAT Scores
     - Schools Overview
     - Schools Contact Information
     - MapView with Schools location pinpointed
+
+
+### How to Use the app
+
+In order to test the app, project files need to be opened in Xcode 9.2<br/>
+There is no need to configure anything inside of the application source code. The project is already configured and can be run directly on a simulator of your choice. when the app first launches it will fetch the School's Data from the City of New York websites API. Once the data has been fetched successfully it will then list all of the schools in a UITableViewCell. Users can then go ahead and click on a school of their choice. This action will present a new View Controller with the Selected Schools SAT Scores and other information.
 
 
 ### Instructions
@@ -82,10 +89,6 @@ In order to prevent you from running down rabbit holes that are less important t
 
 As mentioned, you are not expected to function in a vacuum. Use all the online resources you can find, and please do contact us with questions or for interim feedback if you desire.
 
-### How to Use the app
-
-In order to test the app, project files need to be opened in Xcode 9.2<br/>
-There is no need to configure anything inside of the application source code. The project is already configured and can be run directly on a simulator of your choice. when the app first launches it will fetch the School's Data from the City of New York websites API. Once the data has been fetched successfully it will then list all of the schools in a UITableViewCell. Users can then go ahead and click on a school of their choice. This action will present a new View Controller with the Selected Schools SAT Scores and other information.
 
 
 
