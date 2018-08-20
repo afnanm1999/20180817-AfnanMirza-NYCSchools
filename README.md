@@ -1,6 +1,9 @@
 ## 20180817-AfnanMirza-NYCSchools
 
 <img src="https://raw.githubusercontent.com/afnanm1999/20180817-AfnanMirza-NYCSchools/master/20180817-AfnanMirza-NYCSchools/Supporting%20Files/logo.png" width="250">
+<img src="https://raw.githubusercontent.com/afnanm1999/20180817-AfnanMirza-NYCSchools/master/Screenshots/img1.png" width="250">  <img src="https://raw.githubusercontent.com/afnanm1999/20180817-AfnanMirza-NYCSchools/master/Screenshots/img2.png" width="250">
+
+<img src="https://raw.githubusercontent.com/afnanm1999/20180817-AfnanMirza-NYCSchools/master/Screenshots/img3.png" width="250">  <img src="https://raw.githubusercontent.com/afnanm1999/20180817-AfnanMirza-NYCSchools/master/Screenshots/img4.png" width="250">
 
 ### Stuff i wanted to add but didn't because i didn't have enough time:
 
@@ -70,19 +73,20 @@ There is no need to configure anything inside of the application source code. Th
 
 ### Features added by me
 
- - Made the Application IPhone X Compatible.
- - Added Custom Functions in Utils.swift file. These functions are used to make sorting and fetching of JSON Data from the API easier.
- - All of UITableViewCells for Details were put into a Separate Swift File to make the app easier to navigate as well as making it easier to read the code.
- - Added Extensions inside of Extensions.swift file. These Extensions are used to make it easier and quicker to customize the app.
- - Added Custom Fonts (Chivo & Montserrat)
- - Created a Custom Launch Screen Logo for the application.
- - Card View with Shadows
- - Custom Animation for UITableViewCells
- - Added UISearchBar & UISearchController to make it easier for the user to find a certain school inside of the application.
- - Users can call the school by simply pressing the schools phone number on the Initial Screen (User will have to run the application on a Real Device in order for this to function properly. ).
- - In the Details View Added These Details:
-    - Schools SAT Scores
-    - Schools Overview
-    - Schools Contact Information
-    - MapView with Schools location pinpointed
-    
+- Made the Application IPhone X Compatible.
+- Added Custom Functions in Utils.swift file. These functions are used to make sorting and fetching of JSON Data from the API easier.
+- All of UITableViewCells for Details were put into a Separate Swift File to make the app easier to navigate as well as making it easier to read the code.
+- Added Extensions inside of Extensions.swift file. These Extensions are used to make it easier and quicker to customize the app.
+- Added Custom Fonts (Chivo & Montserrat)
+- Created a Custom Launch Screen Logo for the application.
+- Card View with Shadows
+- Custom Animation for UITableViewCells
+- Added UISearchBar & UISearchController to make it easier for the user to find a certain school inside of the application.
+- Users can call the school by simply pressing the schools phone number on the Initial Screen (User will have to run the application on a Real Device in order for this to function properly. ).
+- In the Details View Added These Details:
+- Schools SAT Scores
+- Schools Overview
+- Schools Contact Information
+- MapView with Schools location pinpointed
+
+
