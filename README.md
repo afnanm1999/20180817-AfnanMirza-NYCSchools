@@ -85,9 +85,9 @@ There is no need to configure anything inside of the application source code. Th
 - Added UISearchBar & UISearchController to make it easier for the user to find a certain school inside of the application.
 - Users can call the school by simply pressing the schools phone number on the Initial Screen (User will have to run the application on a Real Device in order for this to function properly. ).
 - In the Details View Added These Details:
-- Schools SAT Scores
-- Schools Overview
-- Schools Contact Information
-- MapView with Schools location pinpointed
+    - Schools SAT Scores
+    - Schools Overview
+    - Schools Contact Information
+    - MapView with Schools location pinpointed
 
 
